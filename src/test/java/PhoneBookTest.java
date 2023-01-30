@@ -39,4 +39,15 @@ public class PhoneBookTest {
         Assertions.assertFalse(phoneBook.add(name, number));
     }
 
+    @Test
+    public void shouldFindByNumber(){
+        String name = "Ivan";
+        String number = "89198525698";
+        phoneBook.add(name,number);
+
+        Assertions.assertEquals(name, phoneBook.findByNumber(number));
+    }
+
+
+
 }

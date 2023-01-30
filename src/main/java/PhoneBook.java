@@ -12,6 +12,10 @@ public class PhoneBook {
         return true;
     }
 
+    public String findByNumber(String number) {
+        return null;
+    }
+
 
 }
 
