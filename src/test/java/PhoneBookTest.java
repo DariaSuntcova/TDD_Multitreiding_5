@@ -10,11 +10,7 @@ public class PhoneBookTest {
     String number = "89198525698";
 
     @ParameterizedTest
-    @CsvSource({
-            "Ivan, 221955, true",
-            "Kerry, 89198525698, true",
-            "Mama, +79501568741, true",
-    })
+    @CsvSource({"Ivan, 221955, true", "Kerry, 89198525698, true", "Mama, +79501568741, true",})
     public void shouldAdd(String name, String number, boolean expected) {
 
         Assertions.assertEquals(expected, phoneBook.add(name, number));
@@ -33,9 +29,7 @@ public class PhoneBookTest {
 
 
     @ParameterizedTest
-    @CsvSource({
-            "Ivan, 221955",
-    })
+    @CsvSource({"Ivan, 221955",})
     public void shouldAddSameName(String name, String number) {
         phoneBook.add(name, number);
 
@@ -51,7 +45,7 @@ public class PhoneBookTest {
 
     @Test
     public void shouldFindByNumberNoMatches() {
-        Assertions.assertNull( phoneBook.findByNumber("221985"));
+        Assertions.assertNull(phoneBook.findByNumber("221985"));
     }
 
     @Test
@@ -63,7 +57,7 @@ public class PhoneBookTest {
 
     @Test
     public void shouldFindByNameNoMatches() {
-        Assertions.assertNull( phoneBook.findByName(name));
+        Assertions.assertNull(phoneBook.findByName(name));
     }
 
 

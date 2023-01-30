@@ -14,7 +14,7 @@ public class PhoneBook {
 
     public String findByNumber(String number) {
         for (String key : phoneBookMap.keySet()) {
-            if (phoneBookMap.get(key).equals(number)){
+            if (phoneBookMap.get(key).equals(number)) {
                 return key;
             }
         }
@@ -22,6 +22,11 @@ public class PhoneBook {
     }
 
     public String findByName(String name) {
+        for (String key : phoneBookMap.keySet()) {
+            if (key.equals(name)) {
+                return phoneBookMap.get(key);
+            }
+        }
         return null;
     }
 
