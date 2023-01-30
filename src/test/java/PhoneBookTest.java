@@ -40,14 +40,18 @@ public class PhoneBookTest {
     }
 
     @Test
-    public void shouldFindByNumber(){
+    public void shouldFindByNumber() {
         String name = "Ivan";
         String number = "89198525698";
-        phoneBook.add(name,number);
+        phoneBook.add(name, number);
 
         Assertions.assertEquals(name, phoneBook.findByNumber(number));
     }
 
+    @Test
+    public void shouldFindByNumberNoMatches() {
+        Assertions.assertNull( phoneBook.findByNumber("221985"));
+    }
 
 
 }
