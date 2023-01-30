@@ -6,6 +6,9 @@ import org.junit.jupiter.params.provider.CsvSource;
 public class PhoneBookTest {
     PhoneBook phoneBook = new PhoneBook();
 
+    String name = "Ivan";
+    String number = "89198525698";
+
     @ParameterizedTest
     @CsvSource({
             "Ivan, 221955, true",
@@ -41,8 +44,6 @@ public class PhoneBookTest {
 
     @Test
     public void shouldFindByNumber() {
-        String name = "Ivan";
-        String number = "89198525698";
         phoneBook.add(name, number);
 
         Assertions.assertEquals(name, phoneBook.findByNumber(number));
@@ -51,6 +52,18 @@ public class PhoneBookTest {
     @Test
     public void shouldFindByNumberNoMatches() {
         Assertions.assertNull( phoneBook.findByNumber("221985"));
+    }
+
+    @Test
+    public void shouldFindByName() {
+        phoneBook.add(name, number);
+
+        Assertions.assertEquals(number, phoneBook.findByName(name));
+    }
+
+    @Test
+    public void shouldFindByNameNoMatches() {
+        Assertions.assertNull( phoneBook.findByName(name));
     }
 
 
