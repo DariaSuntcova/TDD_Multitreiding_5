@@ -30,6 +30,12 @@ public class PhoneBook {
         return null;
     }
 
+    public void printAllNames() {
+        phoneBookMap.keySet().stream()
+                .sorted()
+                .forEach(System.out::println);
+    }
+
 
 }
 
