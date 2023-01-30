@@ -11,14 +11,23 @@ public class PhoneBookTest {
             "Ivan, 221955, true",
             "Kerry, 89198525698, true",
             "Mama, +79501568741, true",
-            "Daria, null, false",
-            "null, 452369, false",
-            "null, null, false"
     })
     public void shouldAdd(String name, String number, boolean expected) {
 
         Assertions.assertEquals(expected, phoneBook.add(name, number));
     }
+
+    @Test
+    public void shouldAddNullName() {
+
+        Assertions.assertFalse(phoneBook.add(null, "452369"));
+    }
+
+    @Test
+    public void shouldAddNullNumber() {
+        Assertions.assertFalse(phoneBook.add("Ivan", null));
+    }
+
 
     @ParameterizedTest
     @CsvSource({
